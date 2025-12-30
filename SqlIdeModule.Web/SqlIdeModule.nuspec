@@ -1,0 +1,55 @@
+﻿<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>SqlIdeModule</id>
+    <version>1.0.0</version>
+    <authors>Rayza Israceswendy</authors>
+    <owners>Rayza Israceswendy</owners>
+
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+
+    <title>SQL IDE Module for ASP.NET MVC 4.5.2</title>
+    <description>
+      SQL IDE Module for ASP.NET MVC 4.5.2 providing an SSMS-like web interface.
+      Includes authentication, database explorer, query editor, and result viewer.
+    </description>
+
+    <summary>
+      SSMS-like SQL IDE module for ASP.NET MVC 4.5.2
+    </summary>
+
+    <releaseNotes>
+      Initial release with authentication, database explorer, query editor, and result viewer.
+    </releaseNotes>
+
+    <copyright>
+      Copyright 2026
+    </copyright>
+
+    <tags>
+      SQL IDE MVC SSMS Database
+    </tags>
+
+    <dependencies>
+      <dependency id="Microsoft.AspNet.Mvc" version="5.2.9" />
+      <dependency id="Microsoft.AspNet.Razor" version="3.2.9" />
+      <dependency id="Microsoft.AspNet.WebPages" version="3.2.9" />
+    </dependencies>
+  </metadata>
+
+  <files>
+    <!-- Core DLLs -->
+    <file src="bin\Release\SqlIdeModule.Core.dll" target="lib\net452" />
+    <file src="bin\Release\SqlIdeModule.Web.dll" target="lib\net452" />
+
+    <!-- MVC Area Views -->
+    <file src="Areas\SqlIde\Views\**\*.cshtml" target="content\Areas\SqlIde\Views" />
+
+    <!-- Static Assets -->
+    <file src="Content\SqlIde\**\*.*" target="content\SqlIde" />
+    <file src="Scripts\SqlIde\**\*.*" target="content\Scripts\SqlIde" />
+
+    <!-- NuGet install script -->
+    <file src="tools\install.ps1" target="tools" />
+  </files>
+</package>

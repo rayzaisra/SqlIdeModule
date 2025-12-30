@@ -1,0 +1,2 @@
+System.Collections.Concurrent, Version=4.0.14.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+  FxResources.System.Collections.Concurrent.SR.resources

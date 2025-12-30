@@ -1,0 +1,14 @@
+D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Core\bin\Release\SqlIdeModule.Core.dll.config
+D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Core\bin\Release\SqlIdeModule.Core.dll
+D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Core\bin\Release\SqlIdeModule.Core.pdb
+D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Core\bin\Release\EntityFramework.dll
+D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Core\bin\Release\EntityFramework.SqlServer.dll
+D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Core\bin\Release\Newtonsoft.Json.dll
+D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Core\bin\Release\EntityFramework.xml
+D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Core\bin\Release\EntityFramework.SqlServer.xml
+D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Core\bin\Release\Newtonsoft.Json.xml
+D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Core\obj\Release\SqlIdeModule.Core.csproj.AssemblyReference.cache
+D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Core\obj\Release\SqlIdeModule.Core.csproj.CoreCompileInputs.cache
+D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Core\obj\Release\SqlIdeMo.EC72A8DF.Up2Date
+D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Core\obj\Release\SqlIdeModule.Core.dll
+D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Core\obj\Release\SqlIdeModule.Core.pdb

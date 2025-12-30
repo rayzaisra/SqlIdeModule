@@ -1,0 +1,390 @@
+﻿@inherits System.Web.Mvc.WebViewPage
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL IDE Module</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        #sqlIdeContainer {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header-bar {
+            background: #0d6efd;
+            color: white;
+            padding: 1rem;
+            flex-shrink: 0;
+        }
+
+        #mainContent {
+            flex: 1;
+            display: flex;
+            overflow: hidden;
+        }
+
+        #leftPanel {
+            width: 280px;
+            min-width: 280px;
+            border-right: 1px solid #dee2e6;
+            background: #f8f9fa;
+            overflow-y: auto;
+            padding: 1rem;
+            flex-shrink: 0;
+        }
+
+        #rightPanel {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 1rem;
+            overflow: hidden;
+        }
+
+        #queryEditor {
+            resize: vertical;
+            min-height: 150px;
+            max-height: 400px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            border: 1px solid #ced4da;
+            border-radius: 0.375rem;
+            padding: 0.75rem;
+        }
+
+        .execute-btn {
+            margin-top: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        #resultGrid {
+            flex: 1;
+            overflow: auto;
+            border: 1px solid #dee2e6;
+            border-radius: 0.375rem;
+            background: white;
+        }
+
+        .result-table {
+            width: 100%;
+            min-width: 600px;
+            margin: 0;
+        }
+
+            .result-table th {
+                background: #0d6efd;
+                color: white;
+                position: sticky;
+                top: 0;
+                z-index: 10;
+                text-align: left;
+            }
+
+            .result-table th,
+            .result-table td {
+                padding: 0.75rem;
+                border-bottom: 1px solid #dee2e6;
+                white-space: nowrap;
+            }
+
+            .result-table tr:hover {
+                background-color: #f5f5f5;
+            }
+
+        #statusBar {
+            background: #f1f3f5;
+            padding: 0.5rem 1rem;
+            border-top: 1px solid #dee2e6;
+            font-size: 0.875rem;
+            flex-shrink: 0;
+        }
+
+        /* Responsive: Stack vertically on smaller screens */
+        @@media (max-width: 992px) {
+            #mainContent {
+                flex-direction: column;
+            }
+
+            #leftPanel {
+                width: 100%;
+                max-height: 300px;
+                border-right: none;
+                border-bottom: 1px solid #dee2e6;
+            }
+        }
+
+        .tree-node {
+            cursor: pointer;
+            padding: 0.375rem 0.5rem;
+            border-radius: 0.375rem;
+            margin: 0.125rem 0;
+        }
+
+            .tree-node:hover {
+                background: #e9ecef;
+            }
+
+        .tree-parent {
+            font-weight: 600;
+            margin-top: 1rem;
+            color: #495057;
+        }
+
+        .tree-child {
+            padding-left: 1.5rem;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="sqlIdeContainer">
+        <div class="header-bar">
+            <h3 class="mb-0">SQL IDE Module</h3>
+        </div>
+
+        <!-- Bootstrap 5 Modal for Authentication -->
+        <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="authModalLabel">Database Authentication</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            @Html.AntiForgeryToken()
+                            <div class="mb-3">
+                                <label class="form-label">Username</label>
+                                <input type="text" id="username" class="form-control" autocomplete="username" />
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Password</label>
+                                <input type="password" id="password" class="form-control" autocomplete="current-password" />
+                            </div>
+                            <div id="authError" class="alert alert-danger" style="display: none;"></div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" onclick="authenticate()">Connect</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Interface (hidden until authenticated) -->
+        <div id="mainContent" style="display: none;">
+            <div id="leftPanel">
+                <h5 class="mb-3">Database Explorer</h5>
+                <div id="databaseName" class="fw-bold text-primary mb-3"></div>
+                <div id="treeView"></div>
+            </div>
+
+            <div id="rightPanel">
+                <textarea id="queryEditor" class="form-control" placeholder="-- Write your SQL query here..."></textarea>
+                <button class="btn btn-success execute-btn" onclick="executeQuery()">
+                    ▶ Execute Query
+                </button>
+                <div id="resultGrid"></div>
+            </div>
+        </div>
+
+        <div id="statusBar">Ready</div>
+    </div>
+
+    <!-- Bootstrap 5 Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        let authModal = null;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            authModal = new bootstrap.Modal(document.getElementById('authModal'));
+            authModal.show();
+        });
+
+        function authenticate() {
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value;
+            const errorDiv = document.getElementById('authError');
+            errorDiv.style.display = 'none';
+            errorDiv.textContent = '';
+
+            if (!username || !password) {
+                errorDiv.textContent = 'Please enter both username and password.';
+                errorDiv.style.display = 'block';
+                return;
+            }
+
+            const token = document.querySelector('input[name="__RequestVerificationToken"]')?.value;
+
+            fetch('@Url.Action("Authenticate", "SqlIde")', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'RequestVerificationToken': token || ''
+                },
+                body: JSON.stringify({ username: username, password: password })
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Authentication failed (status: ' + response.status + ')');
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data.success || data.Success) {  // supports both cases
+                    authModal.hide();
+                    document.getElementById('mainContent').style.display = 'flex';
+                    document.getElementById('statusBar').textContent = 'Connected successfully';
+                    loadDatabaseStructure();
+                } else {
+                    errorDiv.textContent = data.message || data.Message || 'Invalid credentials';
+                    errorDiv.style.display = 'block';
+                }
+            })
+            .catch(err => {
+                console.error('Auth error:', err);
+                errorDiv.textContent = 'Connection failed. Please try again.';
+                errorDiv.style.display = 'block';
+            });
+        }
+
+        function loadDatabaseStructure() {
+            fetch('@Url.Action("GetDatabaseStructure", "SqlIde")')
+                .then(res => res.json())
+                .then(data => {
+                    if (data.success) {
+                        document.getElementById('databaseName').textContent = data.database;
+                        renderTree(data);
+                    }
+                })
+                .catch(err => console.error('Load structure error:', err));
+        }
+
+        function renderTree(data) {
+            let html = '';
+            html += '<div class="tree-parent">Tables</div>';
+            data.tables.forEach(obj => {
+                html += `<div class="tree-node tree-child">${obj.Schema}.${obj.Name}</div>`;
+            });
+
+            html += '<div class="tree-parent">Views</div>';
+            data.views.forEach(obj => {
+                html += `<div class="tree-node tree-child clickable" data-name="${obj.Schema}.${obj.Name}" data-type="view">${obj.Schema}.${obj.Name}</div>`;
+            });
+
+            html += '<div class="tree-parent">Stored Procedures</div>';
+            data.storedProcedures.forEach(obj => {
+                html += `<div class="tree-node tree-child clickable" data-name="${obj.Schema}.${obj.Name}" data-type="procedure">${obj.Schema}.${obj.Name}</div>`;
+            });
+
+            html += '<div class="tree-parent">Functions</div>';
+            data.functions.forEach(obj => {
+                html += `<div class="tree-node tree-child clickable" data-name="${obj.Schema}.${obj.Name}" data-type="function">${obj.Schema}.${obj.Name}</div>`;
+            });
+
+            document.getElementById('treeView').innerHTML = html;
+
+            document.querySelectorAll('.clickable').forEach(el => {
+                el.addEventListener('click', () => {
+                    loadObjectDefinition(el.dataset.name, el.dataset.type);
+                });
+            });
+        }
+
+        function loadObjectDefinition(name, type) {
+            const token = document.querySelector('input[name="__RequestVerificationToken"]')?.value;
+            fetch('@Url.Action("GetObjectDefinition", "SqlIde")', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'RequestVerificationToken': token || ''
+                },
+                body: JSON.stringify({ objectName: name, objectType: type })
+            })
+            .then(res => res.json())
+            .then(response => {
+                if (response.success) {
+                    document.getElementById('queryEditor').value = response.definition;
+                }
+            });
+        }
+
+        function executeQuery() {
+            const query = document.getElementById('queryEditor').value.trim();
+            if (!query) {
+                alert('Please enter a query');
+                return;
+            }
+
+            document.getElementById('statusBar').textContent = 'Executing query...';
+
+            const token = document.querySelector('input[name="__RequestVerificationToken"]')?.value;
+
+            fetch('@Url.Action("ExecuteQuery", "SqlIde")', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'RequestVerificationToken': token || ''
+                },
+                body: JSON.stringify({ query: query })
+            })
+            .then(res => res.json())
+            .then(result => {
+                if (result.Success || result.success) {
+                    renderResults(result);
+                    document.getElementById('statusBar').textContent =
+                        `${result.Message || 'Query executed successfully'} (Execution time: ${result.ExecutionTime?.toFixed(2) || '0'}s)`;
+                } else {
+                    document.getElementById('resultGrid').innerHTML =
+                        `<div class="alert alert-danger m-3"><strong>Error:</strong> ${result.Message || result.message}</div>`;
+                    document.getElementById('statusBar').textContent = 'Query failed';
+                }
+            })
+            .catch(err => {
+                console.error(err);
+                document.getElementById('resultGrid').innerHTML =
+                    '<div class="alert alert-danger m-3"><strong>Server Error:</strong> Failed to execute query.</div>';
+                document.getElementById('statusBar').textContent = 'Query execution failed';
+            });
+        }
+
+        function renderResults(result) {
+            let html = `
+                <table class="table table-striped result-table mb-0">
+                    <thead class="table-primary">
+                        <tr>`;
+            (result.Columns || []).forEach(col => {
+                html += `<th>${col}</th>`;
+            });
+            html += `</tr></thead><tbody>`;
+
+            (result.Rows || []).forEach(row => {
+                html += '<tr>';
+                row.forEach(cell => {
+                    html += `<td>${cell === null ? '<i class="text-muted">NULL</i>' : cell}</td>`;
+                });
+                html += '</tr>';
+            });
+
+            html += '</tbody></table>';
+            document.getElementById('resultGrid').innerHTML = html;
+        }
+    </script>
+</body>
+</html>

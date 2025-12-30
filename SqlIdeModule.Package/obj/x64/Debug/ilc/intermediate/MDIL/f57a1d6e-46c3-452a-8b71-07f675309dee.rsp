@@ -1,0 +1,42 @@
+﻿/ignoreAccessChecks
+/metadataFile "D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Package\obj\x64\Debug\ilc\intermediate\ILTransformed\DummyAppForUnmanagedEntrypoint.metadata"
+/gvmAssemblyName "f57a1d6e-46c3-452a-8b71-07f675309dee.McgInterop"
+/sharedGenerics
+/ilmergeinfo "D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Package\obj\x64\Debug\ilc\intermediate\ILTransformed\DummyAppForUnmanagedEntrypoint.csv"
+/buildExpandedTocFiles
+/multiFile
+/sharedGenericsMode StandardUniversalGenericsHeuristics
+/ResourcesDirectory "D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Package\obj\x64\Debug\ilc\intermediate\Resources"
+/subsystem windows
+/emitStackTraceMetadata
+/in "D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Package\obj\x64\Debug\ilc\intermediate\ILTransformed\DummyAppForUnmanagedEntrypoint.ilexe"
+/in "D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Package\obj\x64\Debug\ilc\intermediate\ILTransformed\f57a1d6e-46c3-452a-8b71-07f675309dee.McgInterop.ildll"
+/in "D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Package\obj\x64\Debug\ilc\intermediate\ILTransformed\System.Collections.Concurrent.ildll"
+/in "D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Package\obj\x64\Debug\ilc\intermediate\ILTransformed\System.Collections.ildll"
+/in "D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Package\obj\x64\Debug\ilc\intermediate\ILTransformed\System.Diagnostics.Tools.ildll"
+/in "D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Package\obj\x64\Debug\ilc\intermediate\ILTransformed\System.Numerics.Vectors.ildll"
+/in "D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Package\obj\x64\Debug\ilc\intermediate\ILTransformed\System.ObjectModel.ildll"
+/in "D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Package\obj\x64\Debug\ilc\intermediate\ILTransformed\System.Private.CoreLib.ildll"
+/in "D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Package\obj\x64\Debug\ilc\intermediate\ILTransformed\System.Private.Debug.ildll"
+/in "D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Package\obj\x64\Debug\ilc\intermediate\ILTransformed\System.Private.DeveloperExperience.AppX.ildll"
+/in "D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Package\obj\x64\Debug\ilc\intermediate\ILTransformed\System.Private.f57a1d6e-46c3-452a-8b71-07f675309dee.Generated.ildll"
+/in "D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Package\obj\x64\Debug\ilc\intermediate\ILTransformed\System.Private.Interop.ildll"
+/in "D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Package\obj\x64\Debug\ilc\intermediate\ILTransformed\System.Private.Reflection.Core.ildll"
+/in "D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Package\obj\x64\Debug\ilc\intermediate\ILTransformed\System.Private.Reflection.Execution.ildll"
+/in "D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Package\obj\x64\Debug\ilc\intermediate\ILTransformed\System.Private.Reflection.Metadata.ildll"
+/in "D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Package\obj\x64\Debug\ilc\intermediate\ILTransformed\System.Private.StackTraceGenerator.ildll"
+/in "D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Package\obj\x64\Debug\ilc\intermediate\ILTransformed\System.Private.StackTraceMetadata.ildll"
+/in "D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Package\obj\x64\Debug\ilc\intermediate\ILTransformed\System.Private.TypeLoader.ildll"
+/in "D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Package\obj\x64\Debug\ilc\intermediate\ILTransformed\System.Private.Uri.ildll"
+/in "D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Package\obj\x64\Debug\ilc\intermediate\ILTransformed\System.Private.WinRTInterop.CoreLib.ildll"
+/in "D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Package\obj\x64\Debug\ilc\intermediate\ILTransformed\System.Runtime.CompilerServices.Unsafe.ildll"
+/in "D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Package\obj\x64\Debug\ilc\intermediate\ILTransformed\System.Runtime.Extensions.ildll"
+/in "D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Package\obj\x64\Debug\ilc\intermediate\ILTransformed\System.Runtime.ildll"
+/in "D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Package\obj\x64\Debug\ilc\intermediate\ILTransformed\System.Runtime.InteropServices.ildll"
+/in "D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Package\obj\x64\Debug\ilc\intermediate\ILTransformed\System.Runtime.InteropServices.WindowsRuntime.ildll"
+/in "D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Package\obj\x64\Debug\ilc\intermediate\ILTransformed\System.Runtime.WindowsRuntime.ildll"
+/in "D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Package\obj\x64\Debug\ilc\intermediate\ILTransformed\System.Runtime.WindowsRuntime.UI.Xaml.ildll"
+/in "D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Package\obj\x64\Debug\ilc\intermediate\ILTransformed\System.Security.Principal.ildll"
+/in "D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Package\obj\x64\Debug\ilc\intermediate\ILTransformed\System.Text.Encoding.CodePages.ildll"
+/in "D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Package\obj\x64\Debug\ilc\intermediate\ILTransformed\System.Threading.ildll"
+/out "D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Package\obj\x64\Debug\ilc\intermediate\MDIL\f57a1d6e-46c3-452a-8b71-07f675309dee.mdilexe"

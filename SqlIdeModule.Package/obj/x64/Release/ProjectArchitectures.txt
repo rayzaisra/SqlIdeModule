@@ -1,0 +1,1 @@
+D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Package\SqlIdeModule.Package.csproj;x64

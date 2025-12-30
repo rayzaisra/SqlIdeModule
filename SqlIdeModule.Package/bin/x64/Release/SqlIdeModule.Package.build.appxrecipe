@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>BCI-KPO-IT17</Machine>
+    <WindowsUser>202101006</WindowsUser>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetOsVersion>10.0</TargetOsVersion>
+    <TargetOsDescription>Windows 10.0</TargetOsDescription>
+    <SolutionConfiguration>Release|x64</SolutionConfiguration>
+    <PackageArchitecture>x64</PackageArchitecture>
+    <PackageIdentityName>f57a1d6e-46c3-452a-8b71-07f675309dee</PackageIdentityName>
+    <PackageIdentityPublisher>CN=202101006</PackageIdentityPublisher>
+    <IntermediateOutputPath>D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Package\obj\x64\Release\</IntermediateOutputPath>
+    <RemoteDeploymentType></RemoteDeploymentType>
+    <PackageRegistrationPath></PackageRegistrationPath>
+    <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
+    <DeployOptionalPackages>false</DeployOptionalPackages>
+    <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
+    <LayoutDir>D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Package\bin\x64\Release\AppX</LayoutDir>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Package\bin\x64\Release\ilc\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <MainPackageDependency>MainPackageIdentityName</MainPackageDependency>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Package\bin\x64\Release\ilc\Assets\StoreLogo.png">
+      <PackagePath>Assets\StoreLogo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Package\bin\x64\Release\ilc\clrcompression.dll">
+      <PackagePath>clrcompression.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Package\bin\x64\Release\ilc\f57a1d6e-46c3-452a-8b71-07f675309dee.dll">
+      <PackagePath>f57a1d6e-46c3-452a-8b71-07f675309dee.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Package\bin\x64\Release\ilc\f57a1d6e-46c3-452a-8b71-07f675309dee.exe">
+      <PackagePath>f57a1d6e-46c3-452a-8b71-07f675309dee.exe</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Package\bin\x64\Release\ilc\f57a1d6e-46c3-452a-8b71-07f675309dee.pdb">
+      <PackagePath>f57a1d6e-46c3-452a-8b71-07f675309dee.pdb</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Package\bin\x64\Release\ilc\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Package\bin\x64\Release\ilc\SqlIdeModule.Package.winmd">
+      <PackagePath>SqlIdeModule.Package.winmd</PackagePath>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win10-x86.microsoft.net.native.sharedlibrary\2.2.8-rel-31116-00\build\..\tools\SharedLibrary\ret\Native\Microsoft.NET.Native.Framework.2.2.appx">
+      <Name>Microsoft.NET.Native.Framework.2.2</Name>
+      <Version>2.2.29512.0</Version>
+      <Architecture>x86</Architecture>
+      <FrameworkIdentity>Name = Microsoft.NET.Native.Framework.2.2, MinVersion = 2.2.29512.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win10-x86.microsoft.net.native.sharedlibrary\2.2.8-rel-31116-00\build\..\tools\SharedLibrary\ret\Native\Microsoft.NET.Native.Framework.2.2.appx</AppxLocation>
+      <MoreInfo></MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win10-x64.microsoft.net.native.sharedlibrary\2.2.8-rel-31116-00\build\..\tools\SharedLibrary\ret\Native\Microsoft.NET.Native.Framework.2.2.appx">
+      <Name>Microsoft.NET.Native.Framework.2.2</Name>
+      <Version>2.2.29512.0</Version>
+      <Architecture>x64</Architecture>
+      <FrameworkIdentity>Name = Microsoft.NET.Native.Framework.2.2, MinVersion = 2.2.29512.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win10-x64.microsoft.net.native.sharedlibrary\2.2.8-rel-31116-00\build\..\tools\SharedLibrary\ret\Native\Microsoft.NET.Native.Framework.2.2.appx</AppxLocation>
+      <MoreInfo></MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win10-arm64.microsoft.net.native.sharedlibrary\2.2.8-rel-31116-00\build\..\tools\SharedLibrary\ret\Native\Microsoft.NET.Native.Framework.2.2.appx">
+      <Name>Microsoft.NET.Native.Framework.2.2</Name>
+      <Version>2.2.29512.0</Version>
+      <Architecture>arm64</Architecture>
+      <FrameworkIdentity>Name = Microsoft.NET.Native.Framework.2.2, MinVersion = 2.2.29512.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win10-arm64.microsoft.net.native.sharedlibrary\2.2.8-rel-31116-00\build\..\tools\SharedLibrary\ret\Native\Microsoft.NET.Native.Framework.2.2.appx</AppxLocation>
+      <MoreInfo></MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win10-arm.microsoft.net.native.sharedlibrary\2.2.8-rel-31116-00\build\..\tools\SharedLibrary\ret\Native\Microsoft.NET.Native.Framework.2.2.appx">
+      <Name>Microsoft.NET.Native.Framework.2.2</Name>
+      <Version>2.2.29512.0</Version>
+      <Architecture>arm</Architecture>
+      <FrameworkIdentity>Name = Microsoft.NET.Native.Framework.2.2, MinVersion = 2.2.29512.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win10-arm.microsoft.net.native.sharedlibrary\2.2.8-rel-31116-00\build\..\tools\SharedLibrary\ret\Native\Microsoft.NET.Native.Framework.2.2.appx</AppxLocation>
+      <MoreInfo></MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win10-x86.microsoft.net.native.compiler\2.2.12-rel-31116-00\build\..\tools\Runtime\x86\Microsoft.NET.Native.Runtime.2.2.appx">
+      <Name>Microsoft.NET.Native.Runtime.2.2</Name>
+      <Version>2.2.28604.0</Version>
+      <Architecture>x86</Architecture>
+      <FrameworkIdentity>Name = Microsoft.NET.Native.Runtime.2.2, MinVersion = 2.2.28604.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win10-x86.microsoft.net.native.compiler\2.2.12-rel-31116-00\build\..\tools\Runtime\x86\Microsoft.NET.Native.Runtime.2.2.appx</AppxLocation>
+      <MoreInfo></MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win10-x64.microsoft.net.native.compiler\2.2.12-rel-31116-00\build\..\tools\Runtime\x64\Microsoft.NET.Native.Runtime.2.2.appx">
+      <Name>Microsoft.NET.Native.Runtime.2.2</Name>
+      <Version>2.2.28604.0</Version>
+      <Architecture>x64</Architecture>
+      <FrameworkIdentity>Name = Microsoft.NET.Native.Runtime.2.2, MinVersion = 2.2.28604.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win10-x64.microsoft.net.native.compiler\2.2.12-rel-31116-00\build\..\tools\Runtime\x64\Microsoft.NET.Native.Runtime.2.2.appx</AppxLocation>
+      <MoreInfo></MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win10-arm64.microsoft.net.native.compiler\2.2.12-rel-31116-00\build\..\tools\Runtime\arm64\Microsoft.NET.Native.Runtime.2.2.appx">
+      <Name>Microsoft.NET.Native.Runtime.2.2</Name>
+      <Version>2.2.28604.0</Version>
+      <Architecture>arm64</Architecture>
+      <FrameworkIdentity>Name = Microsoft.NET.Native.Runtime.2.2, MinVersion = 2.2.28604.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win10-arm64.microsoft.net.native.compiler\2.2.12-rel-31116-00\build\..\tools\Runtime\arm64\Microsoft.NET.Native.Runtime.2.2.appx</AppxLocation>
+      <MoreInfo></MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win10-arm.microsoft.net.native.compiler\2.2.12-rel-31116-00\build\..\tools\Runtime\arm\Microsoft.NET.Native.Runtime.2.2.appx">
+      <Name>Microsoft.NET.Native.Runtime.2.2</Name>
+      <Version>2.2.28604.0</Version>
+      <Architecture>arm</Architecture>
+      <FrameworkIdentity>Name = Microsoft.NET.Native.Runtime.2.2, MinVersion = 2.2.28604.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win10-arm.microsoft.net.native.compiler\2.2.12-rel-31116-00\build\..\tools\Runtime\arm\Microsoft.NET.Native.Runtime.2.2.appx</AppxLocation>
+      <MoreInfo></MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
+      <Name>Microsoft.VCLibs.140.00</Name>
+      <Version>14.0.33519.0</Version>
+      <Architecture>ARM</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00, MinVersion = 14.0.33519.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Retail\ARM\Microsoft.VCLibs.ARM.14.00.appx</AppxLocation>
+      <MoreInfo></MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
+      <Name>Microsoft.VCLibs.140.00</Name>
+      <Version>14.0.33519.0</Version>
+      <Architecture>ARM64</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00, MinVersion = 14.0.33519.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Retail\ARM64\Microsoft.VCLibs.ARM64.14.00.appx</AppxLocation>
+      <MoreInfo></MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
+      <Name>Microsoft.VCLibs.140.00</Name>
+      <Version>14.0.33519.0</Version>
+      <Architecture>x64</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00, MinVersion = 14.0.33519.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Retail\x64\Microsoft.VCLibs.x64.14.00.appx</AppxLocation>
+      <MoreInfo></MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
+      <Name>Microsoft.VCLibs.140.00</Name>
+      <Version>14.0.33519.0</Version>
+      <Architecture>x86</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00, MinVersion = 14.0.33519.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Retail\x86\Microsoft.VCLibs.x86.14.00.appx</AppxLocation>
+      <MoreInfo></MoreInfo>
+    </ResolvedSDKReference>
+  </ItemGroup>
+</Project>
