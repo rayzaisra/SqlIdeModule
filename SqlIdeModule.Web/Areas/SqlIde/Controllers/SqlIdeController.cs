@@ -37,6 +37,7 @@ namespace SqlIdeModule.Web.Areas.SqlIde.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public JsonResult Authenticate(string username, string password)
         {
             try
@@ -109,6 +110,7 @@ namespace SqlIdeModule.Web.Areas.SqlIde.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public JsonResult ExecuteQuery(string query)
         {
             try

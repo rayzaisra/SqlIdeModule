@@ -3,6 +3,9 @@
   <metadata>
     <id>SqlIdeModule</id>
     <version>1.0.0</version>
+	
+	<readme>README.md</readme>
+	<license type="file">LICENSE.md</license>
     <authors>Rayza Israceswendy</authors>
     <owners>Rayza Israceswendy</owners>
 
@@ -35,9 +38,13 @@
       <dependency id="Microsoft.AspNet.Razor" version="3.2.9" />
       <dependency id="Microsoft.AspNet.WebPages" version="3.2.9" />
     </dependencies>
+	
   </metadata>
 
   <files>
+  
+    <file src="README.md" target="" />
+	<file src="LICENSE.md" target="" />
     <!-- Core DLLs -->
     <file src="bin\Release\SqlIdeModule.Core.dll" target="lib\net452" />
     <file src="bin\Release\SqlIdeModule.Web.dll" target="lib\net452" />
@@ -51,5 +58,7 @@
 
     <!-- NuGet install script -->
     <file src="tools\install.ps1" target="tools" />
+	
+	
   </files>
 </package>
