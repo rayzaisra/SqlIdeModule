@@ -3,7 +3,15 @@
   "WorkspaceRootPath": "D:\\--NITIP\\NetCore\\SqlIdeModule\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3AC1F1C9-41F6-423E-A1EC-972986790595}|SqlIdeModule.Sample\\SqlIdeModule.Sample.csproj|d:\\--nitip\\netcore\\sqlidemodule\\sqlidemodule.sample\\areas\\sqlide\\views\\sqlide\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{2EC7F918-1F02-41F3-BC25-B79BC3EB3F03}|SqlIdeModule.Web\\SqlIdeModule.Web.csproj|d:\\--nitip\\netcore\\sqlidemodule\\sqlidemodule.web\\properties\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2EC7F918-1F02-41F3-BC25-B79BC3EB3F03}|SqlIdeModule.Web\\SqlIdeModule.Web.csproj|solutionrelative:sqlidemodule.web\\properties\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2EC7F918-1F02-41F3-BC25-B79BC3EB3F03}|SqlIdeModule.Web\\SqlIdeModule.Web.csproj|d:\\--nitip\\netcore\\sqlidemodule\\sqlidemodule.web\\areas\\sqlide\\controllers\\sqlidecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2EC7F918-1F02-41F3-BC25-B79BC3EB3F03}|SqlIdeModule.Web\\SqlIdeModule.Web.csproj|solutionrelative:sqlidemodule.web\\areas\\sqlide\\controllers\\sqlidecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3AC1F1C9-41F6-423E-A1EC-972986790595}|SqlIdeModule.Sample\\SqlIdeModule.Sample.csproj|D:\\--NITIP\\NetCore\\SqlIdeModule\\sqlidemodule.sample\\areas\\sqlide\\views\\sqlide\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{3AC1F1C9-41F6-423E-A1EC-972986790595}|SqlIdeModule.Sample\\SqlIdeModule.Sample.csproj|solutionrelative:sqlidemodule.sample\\areas\\sqlide\\views\\sqlide\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
@@ -13,10 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{3AC1F1C9-41F6-423E-A1EC-972986790595}|SqlIdeModule.Sample\\SqlIdeModule.Sample.csproj|D:\\--NITIP\\NetCore\\SqlIdeModule\\sqlidemodule.sample\\areas\\sqlide\\views\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{3AC1F1C9-41F6-423E-A1EC-972986790595}|SqlIdeModule.Sample\\SqlIdeModule.Sample.csproj|solutionrelative:sqlidemodule.sample\\areas\\sqlide\\views\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2EC7F918-1F02-41F3-BC25-B79BC3EB3F03}|SqlIdeModule.Web\\SqlIdeModule.Web.csproj|D:\\--NITIP\\NetCore\\SqlIdeModule\\sqlidemodule.web\\areas\\sqlide\\controllers\\sqlidecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2EC7F918-1F02-41F3-BC25-B79BC3EB3F03}|SqlIdeModule.Web\\SqlIdeModule.Web.csproj|solutionrelative:sqlidemodule.web\\areas\\sqlide\\controllers\\sqlidecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2EC7F918-1F02-41F3-BC25-B79BC3EB3F03}|SqlIdeModule.Web\\SqlIdeModule.Web.csproj|D:\\--NITIP\\NetCore\\SqlIdeModule\\sqlidemodule.web\\areas\\sqlide\\sqlidearearegistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -82,8 +86,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AssemblyInfo.cs",
+              "DocumentMoniker": "D:\\--NITIP\\NetCore\\SqlIdeModule\\SqlIdeModule.Web\\Properties\\AssemblyInfo.cs",
+              "RelativeDocumentMoniker": "SqlIdeModule.Web\\Properties\\AssemblyInfo.cs",
+              "ToolTip": "D:\\--NITIP\\NetCore\\SqlIdeModule\\SqlIdeModule.Web\\Properties\\AssemblyInfo.cs",
+              "RelativeToolTip": "SqlIdeModule.Web\\Properties\\AssemblyInfo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-13T09:57:25.704Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
@@ -94,7 +111,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Web.config",
               "DocumentMoniker": "D:\\--NITIP\\NetCore\\SqlIdeModule\\SqlIdeModule.Web\\Areas\\SqlIde\\Views\\Web.config",
               "RelativeDocumentMoniker": "SqlIdeModule.Web\\Areas\\SqlIde\\Views\\Web.config",
@@ -106,19 +123,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "SqlIdeController.cs",
               "DocumentMoniker": "D:\\--NITIP\\NetCore\\SqlIdeModule\\SqlIdeModule.Web\\Areas\\SqlIde\\Controllers\\SqlIdeController.cs",
               "RelativeDocumentMoniker": "SqlIdeModule.Web\\Areas\\SqlIde\\Controllers\\SqlIdeController.cs",
               "ToolTip": "D:\\--NITIP\\NetCore\\SqlIdeModule\\SqlIdeModule.Web\\Areas\\SqlIde\\Controllers\\SqlIdeController.cs",
               "RelativeToolTip": "SqlIdeModule.Web\\Areas\\SqlIde\\Controllers\\SqlIdeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAMQAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-30T02:53:50.037Z"
+              "WhenOpened": "2025-12-30T02:53:50.037Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "SqlIdeConfiguration.cs",
               "DocumentMoniker": "D:\\--NITIP\\NetCore\\SqlIdeModule\\SqlIdeModule.Web\\Configuration\\SqlIdeConfiguration.cs",
               "RelativeDocumentMoniker": "SqlIdeModule.Web\\Configuration\\SqlIdeConfiguration.cs",
@@ -130,7 +148,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "SqlIdeAreaRegistration.cs",
               "DocumentMoniker": "D:\\--NITIP\\NetCore\\SqlIdeModule\\SqlIdeModule.Web\\Areas\\SqlIde\\SqlIdeAreaRegistration.cs",
               "RelativeDocumentMoniker": "SqlIdeModule.Web\\Areas\\SqlIde\\SqlIdeAreaRegistration.cs",
@@ -142,7 +160,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "CustomConnectionStringProvider.cs",
               "DocumentMoniker": "D:\\--NITIP\\NetCore\\SqlIdeModule\\SqlIdeModule.Core\\Services\\CustomConnectionStringProvider.cs",
               "RelativeDocumentMoniker": "SqlIdeModule.Core\\Services\\CustomConnectionStringProvider.cs",
@@ -154,7 +172,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Web.config",
               "DocumentMoniker": "D:\\--NITIP\\NetCore\\SqlIdeModule\\SqlIdeModule.Sample\\Areas\\SqlIde\\Views\\Web.config",
               "RelativeDocumentMoniker": "SqlIdeModule.Sample\\Areas\\SqlIde\\Views\\Web.config",
@@ -166,7 +184,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\--NITIP\\NetCore\\SqlIdeModule\\SqlIdeModule.Sample\\Areas\\SqlIde\\Views\\SqlIde\\Index.cshtml",
               "RelativeDocumentMoniker": "SqlIdeModule.Sample\\Areas\\SqlIde\\Views\\SqlIde\\Index.cshtml",
@@ -174,12 +192,11 @@
               "RelativeToolTip": "SqlIdeModule.Sample\\Areas\\SqlIde\\Views\\SqlIde\\Index.cshtml",
               "ViewState": "AgIAAIEBAAAAAAAAAAAswIUBAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-29T07:54:04.351Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-29T07:54:04.351Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "IConnectionStringProvider.cs",
               "DocumentMoniker": "D:\\--NITIP\\NetCore\\SqlIdeModule\\SqlIdeModule.Core\\Services\\IConnectionStringProvider.cs",
               "RelativeDocumentMoniker": "SqlIdeModule.Core\\Services\\IConnectionStringProvider.cs",
@@ -191,7 +208,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "ConfigConnectionStringProvider.cs",
               "DocumentMoniker": "D:\\--NITIP\\NetCore\\SqlIdeModule\\SqlIdeModule.Core\\Services\\ConfigConnectionStringProvider.cs",
               "RelativeDocumentMoniker": "SqlIdeModule.Core\\Services\\ConfigConnectionStringProvider.cs",
@@ -203,7 +220,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "AuthenticationService.cs",
               "DocumentMoniker": "D:\\--NITIP\\NetCore\\SqlIdeModule\\SqlIdeModule.Core\\Services\\AuthenticationService.cs",
               "RelativeDocumentMoniker": "SqlIdeModule.Core\\Services\\AuthenticationService.cs",
@@ -215,7 +232,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "DatabaseExplorerService.cs",
               "DocumentMoniker": "D:\\--NITIP\\NetCore\\SqlIdeModule\\SqlIdeModule.Core\\Services\\DatabaseExplorerService.cs",
               "RelativeDocumentMoniker": "SqlIdeModule.Core\\Services\\DatabaseExplorerService.cs",
@@ -227,7 +244,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "ISqlExecutionService.cs",
               "DocumentMoniker": "D:\\--NITIP\\NetCore\\SqlIdeModule\\SqlIdeModule.Core\\Services\\ISqlExecutionService.cs",
               "RelativeDocumentMoniker": "SqlIdeModule.Core\\Services\\ISqlExecutionService.cs",
@@ -239,7 +256,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "SqlExecutionService.cs",
               "DocumentMoniker": "D:\\--NITIP\\NetCore\\SqlIdeModule\\SqlIdeModule.Core\\Services\\SqlExecutionService.cs",
               "RelativeDocumentMoniker": "SqlIdeModule.Core\\Services\\SqlExecutionService.cs",
@@ -251,7 +268,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "SqlCredentials.cs",
               "DocumentMoniker": "D:\\--NITIP\\NetCore\\SqlIdeModule\\SqlIdeModule.Core\\Models\\SqlCredentials.cs",
               "RelativeDocumentMoniker": "SqlIdeModule.Core\\Models\\SqlCredentials.cs",
@@ -263,7 +280,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "D:\\--NITIP\\NetCore\\SqlIdeModule\\SqlIdeModule.Sample\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "SqlIdeModule.Sample\\Views\\Shared\\_Layout.cshtml",
@@ -275,7 +292,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "Web.config",
               "DocumentMoniker": "D:\\--NITIP\\NetCore\\SqlIdeModule\\SqlIdeModule.Sample\\Web.config",
               "RelativeDocumentMoniker": "SqlIdeModule.Sample\\Web.config",
@@ -288,7 +305,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "IAuthenticationService.cs",
               "DocumentMoniker": "D:\\--NITIP\\NetCore\\SqlIdeModule\\SqlIdeModule.Core\\Services\\IAuthenticationService.cs",
               "RelativeDocumentMoniker": "SqlIdeModule.Core\\Services\\IAuthenticationService.cs",
@@ -300,7 +317,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "IDatabaseExplorerService.cs",
               "DocumentMoniker": "D:\\--NITIP\\NetCore\\SqlIdeModule\\SqlIdeModule.Core\\Services\\IDatabaseExplorerService.cs",
               "RelativeDocumentMoniker": "SqlIdeModule.Core\\Services\\IDatabaseExplorerService.cs",

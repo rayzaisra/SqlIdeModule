@@ -31,6 +31,8 @@
         "sources": {
           "C:\\Program Files (x86)\\DevExpress 19.2\\Components\\System\\Components\\Packages": {},
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "D:\\--NITIP\\NetCore\\HumanReadableReports\\HumanReadableReports.Core": {},
+          "D:\\--NITIP\\NetCore\\SqlIdeModule\\SqlIdeModule.Web": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

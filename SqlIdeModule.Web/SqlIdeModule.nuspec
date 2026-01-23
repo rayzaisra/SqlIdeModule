@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>SqlIdeModule</id>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 	
 	<readme>README.md</readme>
 	<license type="file">LICENSE.md</license>
