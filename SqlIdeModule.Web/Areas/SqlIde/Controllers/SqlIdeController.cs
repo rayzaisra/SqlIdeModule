@@ -110,7 +110,6 @@ namespace SqlIdeModule.Web.Areas.SqlIde.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public JsonResult ExecuteQuery(string query)
         {
             try

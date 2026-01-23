@@ -517,4 +517,4 @@ D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Package\obj\x64\Release\ilc\interme
 D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Package\obj\x64\Release\ilc\intermediate\Resources\System.Threading.index.txt
 D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Package\obj\x64\Release\ilc\intermediate\rhbindargs.f57a1d6e-46c3-452a-8b71-07f675309dee.rsp
 D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Package\obj\x64\Release\ilc\intermediate\System.Private.f57a1d6e-46c3-452a-8b71-07f675309dee.Generated.dll
-D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Package\obj\x64\Release\.winmd_cache\$SqlIdeModule.Package.winmd_639047340260405298.json
+D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Package\obj\x64\Release\.winmd_cache\$SqlIdeModule.Package.winmd_639047492423828880.json

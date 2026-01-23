@@ -154,176 +154,182 @@
 </head>
 <body>
     <div id="sqlIdeContainer">
-        <div class="header-bar">
-            <h3 class="mb-0">SQL IDE Module</h3>
-        </div>
+      
+            <div class="header-bar">
+                <h3 class="mb-0">SQL IDE Module</h3>
+            </div>
 
-        <!-- Bootstrap 5 Modal for Authentication -->
-        <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title" id="authModalLabel">Database Authentication</h4>
-                    </div>
-                    <div class="modal-body">
-                        <form>
-                            @Html.AntiForgeryToken()
-                            <div class="mb-3">
-                                <label class="form-label">Username</label>
-                                <input type="text" id="username" class="form-control" autocomplete="username" />
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Password</label>
-                                <input type="password" id="password" class="form-control" autocomplete="current-password" />
-                            </div>
-                            <div id="authError" class="alert alert-danger" style="display: none;"></div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" onclick="authenticate()">Connect</button>
+            <!-- Bootstrap 5 Modal for Authentication -->
+            <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="authModalLabel">Database Authentication</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                @Html.AntiForgeryToken()
+                                <div class="mb-3">
+                                    <label class="form-label">Username</label>
+                                    <input type="text" id="username" class="form-control" autocomplete="username" />
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Password</label>
+                                    <input type="password" id="password" class="form-control" autocomplete="current-password" />
+                                </div>
+                                <div id="authError" class="alert alert-danger" style="display: none;"></div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" onclick="authenticate()">Connect</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Main Interface (hidden until authenticated) -->
-        <div id="mainContent" style="display: none;">
-            <div id="leftPanel">
-                <h5 class="mb-3">Database Explorer</h5>
-                <div id="databaseName" class="fw-bold text-primary mb-3"></div>
-                <div id="treeView"></div>
+            <!-- Main Interface (hidden until authenticated) -->
+            <div id="mainContent" style="display: none;">
+                <div id="leftPanel">
+                    <h5 class="mb-3">Database Explorer</h5>
+                    <div id="databaseName" class="fw-bold text-primary mb-3"></div>
+                    <div id="treeView"></div>
+                </div>
+
+                <div id="rightPanel">
+                    <textarea id="queryEditor" class="form-control" placeholder="-- Write your SQL query here..."></textarea>
+                    <button class="btn btn-success execute-btn" onclick="executeQuery()">
+                        ▶ Execute Query
+                    </button>
+                    <div id="resultGrid"></div>
+                </div>
             </div>
 
-            <div id="rightPanel">
-                <textarea id="queryEditor" class="form-control" placeholder="-- Write your SQL query here..."></textarea>
-                <button class="btn btn-success execute-btn" onclick="executeQuery()">
-                    ▶ Execute Query
-                </button>
-                <div id="resultGrid"></div>
-            </div>
-        </div>
-
-        <div id="statusBar">Ready</div>
+            <div id="statusBar">Ready</div>
+       
     </div>
 
     <!-- Bootstrap 5 Bundle (includes Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        let authModal = null;
+    let authModal = null;
 
-        document.addEventListener('DOMContentLoaded', () => {
-            authModal = new bootstrap.Modal(document.getElementById('authModal'));
-            authModal.show();
+    document.addEventListener('DOMContentLoaded', () => {
+        authModal = new bootstrap.Modal(document.getElementById('authModal'));
+        authModal.show();
+    });
+
+    function authenticate() {
+        const username = document.getElementById('username').value.trim();
+        const password = document.getElementById('password').value;
+        const errorDiv = document.getElementById('authError');
+        errorDiv.style.display = 'none';
+        errorDiv.textContent = '';
+
+        if (!username || !password) {
+            errorDiv.textContent = 'Please enter both username and password.';
+            errorDiv.style.display = 'block';
+            return;
+        }
+
+        const token = document.querySelector('input[name="__RequestVerificationToken"]')?.value;
+
+        // Use FormData instead of JSON
+        const formData = new FormData();
+        formData.append('username', username);
+        formData.append('password', password);
+        formData.append('__RequestVerificationToken', token);
+
+        fetch('@Url.Action("Authenticate", "SqlIde")', {
+            method: 'POST',
+            body: formData  // Send as form data
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Authentication failed (status: ' + response.status + ')');
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.success || data.Success) {
+                authModal.hide();
+                document.getElementById('mainContent').style.display = 'flex';
+                document.getElementById('statusBar').textContent = 'Connected successfully';
+                loadDatabaseStructure();
+            } else {
+                errorDiv.textContent = data.message || data.Message || 'Invalid credentials';
+                errorDiv.style.display = 'block';
+            }
+        })
+        .catch(err => {
+            console.error('Auth error:', err);
+            errorDiv.textContent = 'Connection failed. Please try again.';
+            errorDiv.style.display = 'block';
+        });
+    }
+
+    function loadDatabaseStructure() {
+        fetch('@Url.Action("GetDatabaseStructure", "SqlIde")')
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    document.getElementById('databaseName').textContent = data.database;
+                    renderTree(data);
+                }
+            })
+            .catch(err => console.error('Load structure error:', err));
+    }
+
+    function renderTree(data) {
+        let html = '';
+        html += '<div class="tree-parent">Tables</div>';
+        data.tables.forEach(obj => {
+            html += `<div class="tree-node tree-child">${obj.Schema}.${obj.Name}</div>`;
         });
 
-        function authenticate() {
-            const username = document.getElementById('username').value.trim();
-            const password = document.getElementById('password').value;
-            const errorDiv = document.getElementById('authError');
-            errorDiv.style.display = 'none';
-            errorDiv.textContent = '';
+        html += '<div class="tree-parent">Views</div>';
+        data.views.forEach(obj => {
+            html += `<div class="tree-node tree-child clickable" data-name="${obj.Schema}.${obj.Name}" data-type="view">${obj.Schema}.${obj.Name}</div>`;
+        });
 
-            if (!username || !password) {
-                errorDiv.textContent = 'Please enter both username and password.';
-                errorDiv.style.display = 'block';
-                return;
+        html += '<div class="tree-parent">Stored Procedures</div>';
+        data.storedProcedures.forEach(obj => {
+            html += `<div class="tree-node tree-child clickable" data-name="${obj.Schema}.${obj.Name}" data-type="procedure">${obj.Schema}.${obj.Name}</div>`;
+        });
+
+        html += '<div class="tree-parent">Functions</div>';
+        data.functions.forEach(obj => {
+            html += `<div class="tree-node tree-child clickable" data-name="${obj.Schema}.${obj.Name}" data-type="function">${obj.Schema}.${obj.Name}</div>`;
+        });
+
+        document.getElementById('treeView').innerHTML = html;
+
+        document.querySelectorAll('.clickable').forEach(el => {
+            el.addEventListener('click', () => {
+                loadObjectDefinition(el.dataset.name, el.dataset.type);
+            });
+        });
+    }
+
+    function loadObjectDefinition(name, type) {
+        const token = document.querySelector('input[name="__RequestVerificationToken"]')?.value;
+
+        const formData = new FormData();
+        formData.append('objectName', name);
+        formData.append('objectType', type);
+        formData.append('__RequestVerificationToken', token);
+
+        fetch('@Url.Action("GetObjectDefinition", "SqlIde")', {
+            method: 'POST',
+            body: formData
+        })
+        .then(res => res.json())
+        .then(response => {
+            if (response.success) {
+                document.getElementById('queryEditor').value = response.definition;
             }
-
-            const token = document.querySelector('input[name="__RequestVerificationToken"]')?.value;
-
-            fetch('@Url.Action("Authenticate", "SqlIde")', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'RequestVerificationToken': token || ''
-                },
-                body: JSON.stringify({ username: username, password: password })
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Authentication failed (status: ' + response.status + ')');
-                }
-                return response.json();
-            })
-            .then(data => {
-                if (data.success || data.Success) {  // supports both cases
-                    authModal.hide();
-                    document.getElementById('mainContent').style.display = 'flex';
-                    document.getElementById('statusBar').textContent = 'Connected successfully';
-                    loadDatabaseStructure();
-                } else {
-                    errorDiv.textContent = data.message || data.Message || 'Invalid credentials';
-                    errorDiv.style.display = 'block';
-                }
-            })
-            .catch(err => {
-                console.error('Auth error:', err);
-                errorDiv.textContent = 'Connection failed. Please try again.';
-                errorDiv.style.display = 'block';
-            });
-        }
-
-        function loadDatabaseStructure() {
-            fetch('@Url.Action("GetDatabaseStructure", "SqlIde")')
-                .then(res => res.json())
-                .then(data => {
-                    if (data.success) {
-                        document.getElementById('databaseName').textContent = data.database;
-                        renderTree(data);
-                    }
-                })
-                .catch(err => console.error('Load structure error:', err));
-        }
-
-        function renderTree(data) {
-            let html = '';
-            html += '<div class="tree-parent">Tables</div>';
-            data.tables.forEach(obj => {
-                html += `<div class="tree-node tree-child">${obj.Schema}.${obj.Name}</div>`;
-            });
-
-            html += '<div class="tree-parent">Views</div>';
-            data.views.forEach(obj => {
-                html += `<div class="tree-node tree-child clickable" data-name="${obj.Schema}.${obj.Name}" data-type="view">${obj.Schema}.${obj.Name}</div>`;
-            });
-
-            html += '<div class="tree-parent">Stored Procedures</div>';
-            data.storedProcedures.forEach(obj => {
-                html += `<div class="tree-node tree-child clickable" data-name="${obj.Schema}.${obj.Name}" data-type="procedure">${obj.Schema}.${obj.Name}</div>`;
-            });
-
-            html += '<div class="tree-parent">Functions</div>';
-            data.functions.forEach(obj => {
-                html += `<div class="tree-node tree-child clickable" data-name="${obj.Schema}.${obj.Name}" data-type="function">${obj.Schema}.${obj.Name}</div>`;
-            });
-
-            document.getElementById('treeView').innerHTML = html;
-
-            document.querySelectorAll('.clickable').forEach(el => {
-                el.addEventListener('click', () => {
-                    loadObjectDefinition(el.dataset.name, el.dataset.type);
-                });
-            });
-        }
-
-        function loadObjectDefinition(name, type) {
-            const token = document.querySelector('input[name="__RequestVerificationToken"]')?.value;
-            fetch('@Url.Action("GetObjectDefinition", "SqlIde")', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'RequestVerificationToken': token || ''
-                },
-                body: JSON.stringify({ objectName: name, objectType: type })
-            })
-            .then(res => res.json())
-            .then(response => {
-                if (response.success) {
-                    document.getElementById('queryEditor').value = response.definition;
-                }
-            });
-        }
+        });
+    }
 
         function executeQuery() {
             const query = document.getElementById('queryEditor').value.trim();
@@ -336,39 +342,70 @@
 
             const token = document.querySelector('input[name="__RequestVerificationToken"]')?.value;
 
-            fetch('@Url.Action("ExecuteQuery", "SqlIde")', {
+            const formData = new FormData();
+            formData.append('query', query);
+            if (token) {
+                formData.append('__RequestVerificationToken', token);
+            }
+
+            fetch('@Url.Action("ExecuteQuery", "SqlIde", new { area = "SqlIde" })', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
-                    'RequestVerificationToken': token || ''
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'RequestVerificationToken': token  // Send in header
                 },
-                body: JSON.stringify({ query: query })
+                body: `query=${encodeURIComponent(query)}&__RequestVerificationToken=${encodeURIComponent(token)}`
             })
-            .then(res => res.json())
-            .then(result => {
-                if (result.Success || result.success) {
-                    renderResults(result);
-                    document.getElementById('statusBar').textContent =
-                        `${result.Message || 'Query executed successfully'} (Execution time: ${result.ExecutionTime?.toFixed(2) || '0'}s)`;
-                } else {
+                .then(res => {
+                    console.log('Response status:', res.status);
+                    console.log('Response ok:', res.ok);
+
+                    // Check if response is OK
+                    if (!res.ok) {
+                        return res.text().then(text => {
+                            console.error('Server error response:', text);
+                            throw new Error(`Server returned ${res.status}: ${text.substring(0, 200)}`);
+                        });
+                    }
+
+                    return res.text(); // Get as text first
+                })
+                .then(text => {
+                    console.log('Response text:', text.substring(0, 500)); // Log first 500 chars
+
+                    try {
+                        const result = JSON.parse(text);
+
+                        if (result.Success || result.success) {
+                            renderResults(result);
+                            document.getElementById('statusBar').textContent =
+                                `${result.Message || 'Query executed successfully'} (Execution time: ${result.ExecutionTime?.toFixed(2) || '0'}s)`;
+                        } else {
+                            document.getElementById('resultGrid').innerHTML =
+                                `<div class="alert alert-danger m-3"><strong>Error:</strong> ${result.Message || result.message}</div>`;
+                            document.getElementById('statusBar').textContent = 'Query failed';
+                        }
+                    } catch (parseError) {
+                        console.error('JSON parse error:', parseError);
+                        console.error('Response was:', text);
+                        document.getElementById('resultGrid').innerHTML =
+                            `<div class="alert alert-danger m-3"><strong>Parse Error:</strong> ${parseError.message}<br><pre>${text.substring(0, 500)}</pre></div>`;
+                        document.getElementById('statusBar').textContent = 'Invalid response from server';
+                    }
+                })
+                .catch(err => {
+                    console.error('Fetch error:', err);
                     document.getElementById('resultGrid').innerHTML =
-                        `<div class="alert alert-danger m-3"><strong>Error:</strong> ${result.Message || result.message}</div>`;
-                    document.getElementById('statusBar').textContent = 'Query failed';
-                }
-            })
-            .catch(err => {
-                console.error(err);
-                document.getElementById('resultGrid').innerHTML =
-                    '<div class="alert alert-danger m-3"><strong>Server Error:</strong> Failed to execute query.</div>';
-                document.getElementById('statusBar').textContent = 'Query execution failed';
-            });
+                        `<div class="alert alert-danger m-3"><strong>Server Error:</strong> ${err.message}</div>`;
+                    document.getElementById('statusBar').textContent = 'Query execution failed';
+                });
         }
 
         function renderResults(result) {
             let html = `
-                <table class="table table-striped result-table mb-0">
-                    <thead class="table-primary">
-                        <tr>`;
+            <table class="table table-striped result-table mb-0">
+                <thead class="table-primary">
+                    <tr>`;
             (result.Columns || []).forEach(col => {
                 html += `<th>${col}</th>`;
             });

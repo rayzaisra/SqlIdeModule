@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>SqlIdeModule</id>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
 	
 	<readme>README.md</readme>
 	<license type="file">LICENSE.md</license>
@@ -22,7 +22,20 @@
     </summary>
 
     <releaseNotes>
-      Initial release with authentication, database explorer, query editor, and result viewer.
+      Version 1.0.2 (2026-01-23):
+      - Fixed Anti-Forgery Token validation issues in AJAX requests.
+      - Improved session stability on HTTPS / production environments.
+      - Standardized routing and client-side execution behavior.
+      - Minor UI and security hardening improvements.
+
+      Version 1.0.1 (2026-01-22):
+      - Fixed: View resolution for custom controllers
+      - Improved: Session-based authentication support
+      - Added: Better error messages
+      - Updated: Documentation
+
+      Version 1.0.0 (2024-12-29):
+      - Initial release with authentication, database explorer, query editor, and result viewer.
     </releaseNotes>
 
     <copyright>
