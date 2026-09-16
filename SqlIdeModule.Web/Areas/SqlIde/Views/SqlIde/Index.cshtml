@@ -154,58 +154,58 @@
 </head>
 <body>
     <div id="sqlIdeContainer">
-      
-            <div class="header-bar">
-                <h3 class="mb-0">SQL IDE Module</h3>
-            </div>
 
-            <!-- Bootstrap 5 Modal for Authentication -->
-            <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h4 class="modal-title" id="authModalLabel">Database Authentication</h4>
-                        </div>
-                        <div class="modal-body">
-                            <form>
-                                @Html.AntiForgeryToken()
-                                <div class="mb-3">
-                                    <label class="form-label">Username</label>
-                                    <input type="text" id="username" class="form-control" autocomplete="username" />
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Password</label>
-                                    <input type="password" id="password" class="form-control" autocomplete="current-password" />
-                                </div>
-                                <div id="authError" class="alert alert-danger" style="display: none;"></div>
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" onclick="authenticate()">Connect</button>
-                        </div>
+        <div class="header-bar">
+            <h3 class="mb-0">SQL IDE Module</h3>
+        </div>
+
+        <!-- Bootstrap 5 Modal for Authentication -->
+        <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="authModalLabel">Database Authentication</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            @Html.AntiForgeryToken()
+                            <div class="mb-3">
+                                <label class="form-label">Username</label>
+                                <input type="text" id="username" class="form-control" autocomplete="username" />
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Password</label>
+                                <input type="password" id="password" class="form-control" autocomplete="current-password" />
+                            </div>
+                            <div id="authError" class="alert alert-danger" style="display: none;"></div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" onclick="authenticate()">Connect</button>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- Main Interface (hidden until authenticated) -->
-            <div id="mainContent" style="display: none;">
-                <div id="leftPanel">
-                    <h5 class="mb-3">Database Explorer</h5>
-                    <div id="databaseName" class="fw-bold text-primary mb-3"></div>
-                    <div id="treeView"></div>
-                </div>
-
-                <div id="rightPanel">
-                    <textarea id="queryEditor" class="form-control" placeholder="-- Write your SQL query here..."></textarea>
-                    <button class="btn btn-success execute-btn" onclick="executeQuery()">
-                        ▶ Execute Query
-                    </button>
-                    <div id="resultGrid"></div>
-                </div>
+        <!-- Main Interface (hidden until authenticated) -->
+        <div id="mainContent" style="display: none;">
+            <div id="leftPanel">
+                <h5 class="mb-3">Database Explorer</h5>
+                <div id="databaseName" class="fw-bold text-primary mb-3"></div>
+                <div id="treeView"></div>
             </div>
 
-            <div id="statusBar">Ready</div>
-       
+            <div id="rightPanel">
+                <textarea id="queryEditor" class="form-control" placeholder="-- Write your SQL query here..."></textarea>
+                <button class="btn btn-success execute-btn" onclick="executeQuery()">
+                    ▶ Execute Query
+                </button>
+                <div id="resultGrid"></div>
+            </div>
+        </div>
+
+        <div id="statusBar">Ready</div>
+
     </div>
 
     <!-- Bootstrap 5 Bundle (includes Popper) -->

@@ -31,6 +31,8 @@ D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Sample\bin\Antlr3.Runtime.dll
 D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Sample\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Sample\bin\Microsoft.Web.Infrastructure.dll
 D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Sample\bin\Newtonsoft.Json.dll
+D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Sample\bin\SqlIdeModule.Core.dll
+D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Sample\bin\SqlIdeModule.Web.dll
 D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Sample\bin\System.Web.Helpers.dll
 D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Sample\bin\System.Web.Mvc.dll
 D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Sample\bin\System.Web.Optimization.dll
@@ -39,6 +41,9 @@ D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Sample\bin\System.Web.WebPages.Depl
 D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Sample\bin\System.Web.WebPages.dll
 D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Sample\bin\System.Web.WebPages.Razor.dll
 D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Sample\bin\WebGrease.dll
+D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Sample\bin\SqlIdeModule.Core.pdb
+D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Sample\bin\SqlIdeModule.Core.dll.config
+D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Sample\bin\SqlIdeModule.Web.pdb
 D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Sample\bin\System.Web.Helpers.xml
 D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Sample\bin\System.Web.Mvc.xml
 D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Sample\bin\System.Web.Optimization.xml
@@ -54,8 +59,3 @@ D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Sample\obj\Debug\SqlIdeModule.Sampl
 D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Sample\obj\Debug\SqlIdeMo.F1E70973.Up2Date
 D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Sample\obj\Debug\SqlIdeModule.Sample.dll
 D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Sample\obj\Debug\SqlIdeModule.Sample.pdb
-D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Sample\bin\SqlIdeModule.Core.dll
-D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Sample\bin\SqlIdeModule.Core.pdb
-D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Sample\bin\SqlIdeModule.Core.dll.config
-D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Sample\bin\SqlIdeModule.Web.dll
-D:\--NITIP\NetCore\SqlIdeModule\SqlIdeModule.Sample\bin\SqlIdeModule.Web.pdb

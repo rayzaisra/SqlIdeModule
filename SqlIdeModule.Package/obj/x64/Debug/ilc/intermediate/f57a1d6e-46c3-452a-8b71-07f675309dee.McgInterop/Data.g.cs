@@ -3541,18 +3541,18 @@ namespace __Interop
 				772, // Windows.Foundation.IReference`1<Int32>
 				11128, // Windows.UI.Core.CoreDispatcher
 				11144, // Windows.UI.Core.CoreDispatcherPriority
-				11168, // Windows.Foundation.Metadata.ContractVersionAttribute
-				11194, // Windows.Foundation.UniversalApiContract
-				11216, // Windows.Foundation.Metadata.GuidAttribute
-				11231, // Windows.Foundation.Metadata.WebHostHiddenAttribute
-				11255, // Windows.Foundation.Metadata.ExclusiveToAttribute
+				11168, // Windows.Foundation.Metadata.ExclusiveToAttribute
+				11190, // Windows.Foundation.Metadata.WebHostHiddenAttribute
+				11214, // Windows.Foundation.Metadata.GuidAttribute
+				11229, // Windows.Foundation.Metadata.ContractVersionAttribute
+				11255, // Windows.Foundation.UniversalApiContract
 				11277, // Windows.Foundation.FoundationContract
 				11297, // Windows.Foundation.Metadata.MarshalingBehaviorAttribute
 				11326, // Windows.Foundation.Metadata.MarshalingType
 				11342, // Windows.Foundation.Metadata.MuseAttribute
-				11357, // Windows.Foundation.Metadata.AllowMultipleAttribute
-				11381, // Windows.Foundation.Metadata.ApiContractAttribute
-				11403, // Windows.Foundation.Metadata.AttributeNameAttribute
+				11357, // Windows.Foundation.Metadata.AttributeNameAttribute
+				11381, // Windows.Foundation.Metadata.AllowMultipleAttribute
+				11405, // Windows.Foundation.Metadata.ApiContractAttribute
 				2085, // Windows.Foundation.IReference`1<Char16>
 				2107, // Windows.Foundation.IReference`1<UInt8>
 				2128, // Windows.Foundation.IReference`1<Windows.UI.Color>
@@ -3621,9 +3621,9 @@ namespace __Interop
 				12047, // Windows.Foundation.Metadata.RemoteAsyncAttribute
 				5433, // Windows.Foundation.Collections.IKeyValuePair`2<Object,Object>
 				12069, // Windows.Foundation.Metadata.ActivatableAttribute
-				12091, // Windows.Foundation.Metadata.ThreadingAttribute
-				12111, // Windows.Foundation.Metadata.ThreadingModel
-				12127, // Windows.Foundation.Metadata.DualApiPartitionAttribute
+				12091, // Windows.Foundation.Metadata.DualApiPartitionAttribute
+				12118, // Windows.Foundation.Metadata.ThreadingAttribute
+				12138, // Windows.Foundation.Metadata.ThreadingModel
 				12154, // Windows.Foundation.Metadata.StaticAttribute
 				12171, // Windows.Foundation.IReferenceArray`1<UInt8>
 				12197, // Windows.Foundation.IReferenceArray`1<String>
@@ -3968,14 +3968,14 @@ namespace __Interop
 				}, 
 				// Index = 42
 				new global::System.Runtime.InteropServices.McgClassData() {
-					FixupClassType = new global::Internal.Runtime.CompilerServices.FixupRuntimeTypeHandle(typeof(global::Windows.Foundation.Metadata.ContractVersionAttribute).TypeHandle),
+					FixupClassType = new global::Internal.Runtime.CompilerServices.FixupRuntimeTypeHandle(typeof(global::Windows.Foundation.Metadata.ExclusiveToAttribute).TypeHandle),
 					Flags = (global::System.Runtime.InteropServices.McgClassFlags.NotComObject | global::System.Runtime.InteropServices.McgClassFlags.IsWinRT),
 					BaseClassIndex = -1,
 					DefaultInterfaceIndex = -1,
 				}, 
 				// Index = 43
 				new global::System.Runtime.InteropServices.McgClassData() {
-					FixupClassType = new global::Internal.Runtime.CompilerServices.FixupRuntimeTypeHandle(typeof(global::Windows.Foundation.UniversalApiContract).TypeHandle),
+					FixupClassType = new global::Internal.Runtime.CompilerServices.FixupRuntimeTypeHandle(typeof(global::Windows.Foundation.Metadata.WebHostHiddenAttribute).TypeHandle),
 					Flags = (global::System.Runtime.InteropServices.McgClassFlags.NotComObject | global::System.Runtime.InteropServices.McgClassFlags.IsWinRT),
 					BaseClassIndex = -1,
 					DefaultInterfaceIndex = -1,
@@ -3989,14 +3989,14 @@ namespace __Interop
 				}, 
 				// Index = 45
 				new global::System.Runtime.InteropServices.McgClassData() {
-					FixupClassType = new global::Internal.Runtime.CompilerServices.FixupRuntimeTypeHandle(typeof(global::Windows.Foundation.Metadata.WebHostHiddenAttribute).TypeHandle),
+					FixupClassType = new global::Internal.Runtime.CompilerServices.FixupRuntimeTypeHandle(typeof(global::Windows.Foundation.Metadata.ContractVersionAttribute).TypeHandle),
 					Flags = (global::System.Runtime.InteropServices.McgClassFlags.NotComObject | global::System.Runtime.InteropServices.McgClassFlags.IsWinRT),
 					BaseClassIndex = -1,
 					DefaultInterfaceIndex = -1,
 				}, 
 				// Index = 46
 				new global::System.Runtime.InteropServices.McgClassData() {
-					FixupClassType = new global::Internal.Runtime.CompilerServices.FixupRuntimeTypeHandle(typeof(global::Windows.Foundation.Metadata.ExclusiveToAttribute).TypeHandle),
+					FixupClassType = new global::Internal.Runtime.CompilerServices.FixupRuntimeTypeHandle(typeof(global::Windows.Foundation.UniversalApiContract).TypeHandle),
 					Flags = (global::System.Runtime.InteropServices.McgClassFlags.NotComObject | global::System.Runtime.InteropServices.McgClassFlags.IsWinRT),
 					BaseClassIndex = -1,
 					DefaultInterfaceIndex = -1,
@@ -4031,21 +4031,21 @@ namespace __Interop
 				}, 
 				// Index = 51
 				new global::System.Runtime.InteropServices.McgClassData() {
-					FixupClassType = new global::Internal.Runtime.CompilerServices.FixupRuntimeTypeHandle(typeof(global::Windows.Foundation.Metadata.AllowMultipleAttribute).TypeHandle),
+					FixupClassType = new global::Internal.Runtime.CompilerServices.FixupRuntimeTypeHandle(typeof(global::Windows.Foundation.Metadata.AttributeNameAttribute).TypeHandle),
 					Flags = (global::System.Runtime.InteropServices.McgClassFlags.NotComObject | global::System.Runtime.InteropServices.McgClassFlags.IsWinRT),
 					BaseClassIndex = -1,
 					DefaultInterfaceIndex = -1,
 				}, 
 				// Index = 52
 				new global::System.Runtime.InteropServices.McgClassData() {
-					FixupClassType = new global::Internal.Runtime.CompilerServices.FixupRuntimeTypeHandle(typeof(global::Windows.Foundation.Metadata.ApiContractAttribute).TypeHandle),
+					FixupClassType = new global::Internal.Runtime.CompilerServices.FixupRuntimeTypeHandle(typeof(global::Windows.Foundation.Metadata.AllowMultipleAttribute).TypeHandle),
 					Flags = (global::System.Runtime.InteropServices.McgClassFlags.NotComObject | global::System.Runtime.InteropServices.McgClassFlags.IsWinRT),
 					BaseClassIndex = -1,
 					DefaultInterfaceIndex = -1,
 				}, 
 				// Index = 53
 				new global::System.Runtime.InteropServices.McgClassData() {
-					FixupClassType = new global::Internal.Runtime.CompilerServices.FixupRuntimeTypeHandle(typeof(global::Windows.Foundation.Metadata.AttributeNameAttribute).TypeHandle),
+					FixupClassType = new global::Internal.Runtime.CompilerServices.FixupRuntimeTypeHandle(typeof(global::Windows.Foundation.Metadata.ApiContractAttribute).TypeHandle),
 					Flags = (global::System.Runtime.InteropServices.McgClassFlags.NotComObject | global::System.Runtime.InteropServices.McgClassFlags.IsWinRT),
 					BaseClassIndex = -1,
 					DefaultInterfaceIndex = -1,
@@ -4551,21 +4551,21 @@ namespace __Interop
 				}, 
 				// Index = 122
 				new global::System.Runtime.InteropServices.McgClassData() {
-					FixupClassType = new global::Internal.Runtime.CompilerServices.FixupRuntimeTypeHandle(typeof(global::Windows.Foundation.Metadata.ThreadingAttribute).TypeHandle),
+					FixupClassType = new global::Internal.Runtime.CompilerServices.FixupRuntimeTypeHandle(typeof(global::Windows.Foundation.Metadata.DualApiPartitionAttribute).TypeHandle),
 					Flags = (global::System.Runtime.InteropServices.McgClassFlags.NotComObject | global::System.Runtime.InteropServices.McgClassFlags.IsWinRT),
 					BaseClassIndex = -1,
 					DefaultInterfaceIndex = -1,
 				}, 
 				// Index = 123
 				new global::System.Runtime.InteropServices.McgClassData() {
-					FixupClassType = new global::Internal.Runtime.CompilerServices.FixupRuntimeTypeHandle(typeof(global::Windows.Foundation.Metadata.ThreadingModel).TypeHandle),
+					FixupClassType = new global::Internal.Runtime.CompilerServices.FixupRuntimeTypeHandle(typeof(global::Windows.Foundation.Metadata.ThreadingAttribute).TypeHandle),
 					Flags = (global::System.Runtime.InteropServices.McgClassFlags.NotComObject | global::System.Runtime.InteropServices.McgClassFlags.IsWinRT),
 					BaseClassIndex = -1,
 					DefaultInterfaceIndex = -1,
 				}, 
 				// Index = 124
 				new global::System.Runtime.InteropServices.McgClassData() {
-					FixupClassType = new global::Internal.Runtime.CompilerServices.FixupRuntimeTypeHandle(typeof(global::Windows.Foundation.Metadata.DualApiPartitionAttribute).TypeHandle),
+					FixupClassType = new global::Internal.Runtime.CompilerServices.FixupRuntimeTypeHandle(typeof(global::Windows.Foundation.Metadata.ThreadingModel).TypeHandle),
 					Flags = (global::System.Runtime.InteropServices.McgClassFlags.NotComObject | global::System.Runtime.InteropServices.McgClassFlags.IsWinRT),
 					BaseClassIndex = -1,
 					DefaultInterfaceIndex = -1,
@@ -11122,18 +11122,18 @@ namespace __Interop
 		    155, L, e, n, g, t, h, I, s, A, t, t, r, i, b, u, t, e, 0, 
 		    135, C, o, r, e, D, i, s, p, a, t, c, h, e, r, 0, 
 		    135, C, o, r, e, D, i, s, p, a, t, c, h, e, r, P, r, i, o, r, i, t, y, 0, 
+		    155, E, x, c, l, u, s, i, v, e, T, o, A, t, t, r, i, b, u, t, e, 0, 
+		    155, W, e, b, H, o, s, t, H, i, d, d, e, n, A, t, t, r, i, b, u, t, e, 0, 
+		    155, G, u, i, d, A, t, t, r, i, b, u, t, e, 0, 
 		    155, C, o, n, t, r, a, c, t, V, e, r, s, i, o, n, A, t, t, r, i, b, u, t, e, 0, 
 		    130, U, n, i, v, e, r, s, a, l, A, p, i, C, o, n, t, r, a, c, t, 0, 
-		    155, G, u, i, d, A, t, t, r, i, b, u, t, e, 0, 
-		    155, W, e, b, H, o, s, t, H, i, d, d, e, n, A, t, t, r, i, b, u, t, e, 0, 
-		    155, E, x, c, l, u, s, i, v, e, T, o, A, t, t, r, i, b, u, t, e, 0, 
 		    130, F, o, u, n, d, a, t, i, o, n, C, o, n, t, r, a, c, t, 0, 
 		    155, M, a, r, s, h, a, l, i, n, g, B, e, h, a, v, i, o, r, A, t, t, r, i, b, u, t, e, 0, 
 		    155, M, a, r, s, h, a, l, i, n, g, T, y, p, e, 0, 
 		    155, M, u, s, e, A, t, t, r, i, b, u, t, e, 0, 
+		    155, A, t, t, r, i, b, u, t, e, N, a, m, e, A, t, t, r, i, b, u, t, e, 0, 
 		    155, A, l, l, o, w, M, u, l, t, i, p, l, e, A, t, t, r, i, b, u, t, e, 0, 
 		    155, A, p, i, C, o, n, t, r, a, c, t, A, t, t, r, i, b, u, t, e, 0, 
-		    155, A, t, t, r, i, b, u, t, e, N, a, m, e, A, t, t, r, i, b, u, t, e, 0, 
 		    130, I, R, e, f, e, r, e, n, c, e, A, r, r, a, y, 96, 49, 60, O, b, j, e, c, t, 62, 0, 
 		    143, C, a, l, e, n, d, a, r, 0, 
 		    143, L, a, n, g, u, a, g, e, 0, 
@@ -11166,9 +11166,9 @@ namespace __Interop
 		    155, O, v, e, r, l, o, a, d, A, t, t, r, i, b, u, t, e, 0, 
 		    155, R, e, m, o, t, e, A, s, y, n, c, A, t, t, r, i, b, u, t, e, 0, 
 		    155, A, c, t, i, v, a, t, a, b, l, e, A, t, t, r, i, b, u, t, e, 0, 
+		    155, D, u, a, l, A, p, i, P, a, r, t, i, t, i, o, n, A, t, t, r, i, b, u, t, e, 0, 
 		    155, T, h, r, e, a, d, i, n, g, A, t, t, r, i, b, u, t, e, 0, 
 		    155, T, h, r, e, a, d, i, n, g, M, o, d, e, l, 0, 
-		    155, D, u, a, l, A, p, i, P, a, r, t, i, t, i, o, n, A, t, t, r, i, b, u, t, e, 0, 
 		    155, S, t, a, t, i, c, A, t, t, r, i, b, u, t, e, 0, 
 		    130, I, R, e, f, e, r, e, n, c, e, A, r, r, a, y, 96, 49, 60, U, I, n, t, 56, 62, 0, 
 		    130, I, R, e, f, e, r, e, n, c, e, A, r, r, a, y, 96, 49, 60, S, t, r, i, n, g, 62, 0, 
@@ -12852,18 +12852,18 @@ namespace __Interop
 			[global::System.Runtime.CompilerServices.TypeHandleFixup(1872, typeof(global::Windows.Foundation.IReference<int>))]
 			[global::System.Runtime.CompilerServices.TypeHandleFixup(1920, typeof(global::Windows.UI.Core.CoreDispatcher))]
 			[global::System.Runtime.CompilerServices.TypeHandleFixup(1968, typeof(global::Windows.UI.Core.CoreDispatcherPriority))]
-			[global::System.Runtime.CompilerServices.TypeHandleFixup(2016, typeof(global::Windows.Foundation.Metadata.ContractVersionAttribute))]
-			[global::System.Runtime.CompilerServices.TypeHandleFixup(2064, typeof(global::Windows.Foundation.UniversalApiContract))]
+			[global::System.Runtime.CompilerServices.TypeHandleFixup(2016, typeof(global::Windows.Foundation.Metadata.ExclusiveToAttribute))]
+			[global::System.Runtime.CompilerServices.TypeHandleFixup(2064, typeof(global::Windows.Foundation.Metadata.WebHostHiddenAttribute))]
 			[global::System.Runtime.CompilerServices.TypeHandleFixup(2112, typeof(global::Windows.Foundation.Metadata.GuidAttribute))]
-			[global::System.Runtime.CompilerServices.TypeHandleFixup(2160, typeof(global::Windows.Foundation.Metadata.WebHostHiddenAttribute))]
-			[global::System.Runtime.CompilerServices.TypeHandleFixup(2208, typeof(global::Windows.Foundation.Metadata.ExclusiveToAttribute))]
+			[global::System.Runtime.CompilerServices.TypeHandleFixup(2160, typeof(global::Windows.Foundation.Metadata.ContractVersionAttribute))]
+			[global::System.Runtime.CompilerServices.TypeHandleFixup(2208, typeof(global::Windows.Foundation.UniversalApiContract))]
 			[global::System.Runtime.CompilerServices.TypeHandleFixup(2256, typeof(global::Windows.Foundation.FoundationContract))]
 			[global::System.Runtime.CompilerServices.TypeHandleFixup(2304, typeof(global::Windows.Foundation.Metadata.MarshalingBehaviorAttribute))]
 			[global::System.Runtime.CompilerServices.TypeHandleFixup(2352, typeof(global::Windows.Foundation.Metadata.MarshalingType))]
 			[global::System.Runtime.CompilerServices.TypeHandleFixup(2400, typeof(global::Windows.Foundation.Metadata.MuseAttribute))]
-			[global::System.Runtime.CompilerServices.TypeHandleFixup(2448, typeof(global::Windows.Foundation.Metadata.AllowMultipleAttribute))]
-			[global::System.Runtime.CompilerServices.TypeHandleFixup(2496, typeof(global::Windows.Foundation.Metadata.ApiContractAttribute))]
-			[global::System.Runtime.CompilerServices.TypeHandleFixup(2544, typeof(global::Windows.Foundation.Metadata.AttributeNameAttribute))]
+			[global::System.Runtime.CompilerServices.TypeHandleFixup(2448, typeof(global::Windows.Foundation.Metadata.AttributeNameAttribute))]
+			[global::System.Runtime.CompilerServices.TypeHandleFixup(2496, typeof(global::Windows.Foundation.Metadata.AllowMultipleAttribute))]
+			[global::System.Runtime.CompilerServices.TypeHandleFixup(2544, typeof(global::Windows.Foundation.Metadata.ApiContractAttribute))]
 			[global::System.Runtime.CompilerServices.TypeHandleFixup(2592, typeof(global::Windows.Foundation.IReference<char>))]
 			[global::System.Runtime.CompilerServices.TypeHandleFixup(2640, typeof(global::Windows.Foundation.IReference<byte>))]
 			[global::System.Runtime.CompilerServices.TypeHandleFixup(2688, typeof(global::Windows.Foundation.IReference<global::Windows.UI.Color>))]
@@ -12932,9 +12932,9 @@ namespace __Interop
 			[global::System.Runtime.CompilerServices.TypeHandleFixup(5712, typeof(global::Windows.Foundation.Metadata.RemoteAsyncAttribute))]
 			[global::System.Runtime.CompilerServices.TypeHandleFixup(5760, typeof(global::Windows.Foundation.Collections.IKeyValuePair<object, object>))]
 			[global::System.Runtime.CompilerServices.TypeHandleFixup(5808, typeof(global::Windows.Foundation.Metadata.ActivatableAttribute))]
-			[global::System.Runtime.CompilerServices.TypeHandleFixup(5856, typeof(global::Windows.Foundation.Metadata.ThreadingAttribute))]
-			[global::System.Runtime.CompilerServices.TypeHandleFixup(5904, typeof(global::Windows.Foundation.Metadata.ThreadingModel))]
-			[global::System.Runtime.CompilerServices.TypeHandleFixup(5952, typeof(global::Windows.Foundation.Metadata.DualApiPartitionAttribute))]
+			[global::System.Runtime.CompilerServices.TypeHandleFixup(5856, typeof(global::Windows.Foundation.Metadata.DualApiPartitionAttribute))]
+			[global::System.Runtime.CompilerServices.TypeHandleFixup(5904, typeof(global::Windows.Foundation.Metadata.ThreadingAttribute))]
+			[global::System.Runtime.CompilerServices.TypeHandleFixup(5952, typeof(global::Windows.Foundation.Metadata.ThreadingModel))]
 			[global::System.Runtime.CompilerServices.TypeHandleFixup(6000, typeof(global::Windows.Foundation.Metadata.StaticAttribute))]
 			[global::System.Runtime.CompilerServices.TypeHandleFixup(6048, typeof(byte[]))]
 			[global::System.Runtime.CompilerServices.TypeHandleFixup(6096, typeof(string[]))]

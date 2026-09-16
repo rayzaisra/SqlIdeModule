@@ -10,6 +10,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SQL IDE Module</title>
 
+    <!-- SQL IDE Encryption Key (set during authentication) -->
+    <meta name="sqlide-encryption-key" content="" id="sqlideEncryptionKeyMeta">
+
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -235,10 +238,9 @@
             fetch('@Url.Action("Authenticate", "SqlIde")', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
-                    'RequestVerificationToken': token || ''
+                    'Content-Type': 'application/x-www-form-urlencoded'
                 },
-                body: JSON.stringify({ username: username, password: password })
+                body: `username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}&__RequestVerificationToken=${encodeURIComponent(token)}`
             })
             .then(response => {
                 if (!response.ok) {
@@ -251,6 +253,13 @@
                     authModal.hide();
                     document.getElementById('mainContent').style.display = 'flex';
                     document.getElementById('statusBar').textContent = 'Connected successfully';
+                    
+                    // Set encryption key for query encryption
+                    var keyMeta = document.querySelector('meta[name="sqlide-encryption-key"]');
+                    if (data.encryptionKey) {
+                        keyMeta.setAttribute('content', data.encryptionKey);
+                    }
+                    
                     loadDatabaseStructure();
                 } else {
                     errorDiv.textContent = data.message || data.Message || 'Invalid credentials';
@@ -325,7 +334,50 @@
             });
         }
 
-        function executeQuery() {
+        function encryptQuery(query, key) {
+            return new Promise((resolve, reject) => {
+                try {
+                    const encoder = new TextEncoder();
+                    const keyBytes = encoder.encode(key);
+                    const plaintext = encoder.encode(query);
+                    
+                    // Hash key with SHA-256 to get 32-byte key for AES-256
+                    crypto.subtle.digest('SHA-256', keyBytes).then(hash => {
+                        return crypto.subtle.importKey(
+                            "raw",
+                            hash,
+                            { name: "AES-CBC", length: 256 },
+                            false,
+                            ["encrypt"]
+                        ).then(cryptoKey => {
+                            // IV (Initialization Vector) - 16 bytes for AES-CBC
+                            const iv = crypto.getRandomValues(new Uint8Array(16));
+                            return {
+                                iv: iv,
+                                cryptoKey: cryptoKey,
+                                plaintext: plaintext
+                            };
+                        });
+                    }).then(result => {
+                        return crypto.subtle.encrypt(
+                            { name: "AES-CBC", iv: result.iv },
+                            result.cryptoKey,
+                            result.plaintext
+                        ).then(encryptedBytes => {
+                            // Combine IV + ciphertext and base64 encode
+                            const combined = new Uint8Array(16 + encryptedBytes.byteLength);
+                            combined.set(result.iv);
+                            combined.set(new Uint8Array(encryptedBytes), 16);
+                            resolve(btoa(String.fromCharCode.apply(null, Array.from(combined))));
+                        });
+                    }).catch(reject);
+                } catch (e) {
+                    reject(e);
+                }
+            });
+        }
+
+        async function executeQuery() {
             const query = document.getElementById('queryEditor').value.trim();
             if (!query) {
                 alert('Please enter a query');
@@ -334,15 +386,21 @@
 
             document.getElementById('statusBar').textContent = 'Executing query...';
 
+            // Encrypt the query before sending
+            const encryptionKey = document.querySelector('meta[name="sqlide-encryption-key"]')?.getAttribute('content');
+            let encryptedQuery = query;
+            if (encryptionKey) {
+                encryptedQuery = await encryptQuery(query, encryptionKey);
+            }
+
             const token = document.querySelector('input[name="__RequestVerificationToken"]')?.value;
 
             fetch('@Url.Action("ExecuteQuery", "SqlIde")', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
-                    'RequestVerificationToken': token || ''
+                    'Content-Type': 'application/x-www-form-urlencoded'
                 },
-                body: JSON.stringify({ query: query })
+                body: `query=${encodeURIComponent(encryptedQuery)}&__RequestVerificationToken=${encodeURIComponent(token)}`
             })
             .then(res => res.json())
             .then(result => {

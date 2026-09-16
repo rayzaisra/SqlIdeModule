@@ -10,7 +10,7 @@
         "projectUniqueName": "D:\\--NITIP\\NetCore\\SqlIdeModule\\SqlIdeModule.Package\\SqlIdeModule.Package.csproj",
         "projectName": "SqlIdeModule.Package",
         "projectPath": "D:\\--NITIP\\NetCore\\SqlIdeModule\\SqlIdeModule.Package\\SqlIdeModule.Package.csproj",
-        "packagesPath": "C:\\Users\\202101006\\.nuget\\packages\\",
+        "packagesPath": "D:\\Program\\Microsoft Visual Studio\\Nuget\\packages",
         "outputPath": "D:\\--NITIP\\NetCore\\SqlIdeModule\\SqlIdeModule.Package\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,

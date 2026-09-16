@@ -23,16 +23,24 @@ All notable changes to this project will be documented in this file.
 - Session-based authentication
 - Query timeout protection
 - Dangerous command blocking
-```
 
-### 5. Create **docs/** folder with screenshots
+## [1.1.0] - 2026-09-16
 
-Create placeholder text files or add actual screenshots:
-```
-docs/
-├── demo.gif (animated demo)
-├── authentication.png
-├── main-interface.png
-├── results.png
-├── mobile.png
-└── installation.md
+### Added
+- Query encryption before transmission to hide SQL from network inspection
+- AES-256-CBC encryption on frontend using Web Crypto API
+- SHA-256 key derivation for consistent 256-bit key on both client and server
+- Backend decryption using SHA-256 hashed key with AES-CBC
+- Anti-forgery token sent as form field for compatibility with `[ValidateAntiForgeryToken]`
+
+### Changed
+- Query parameter encrypted client-side before sending to `ExecuteQuery` endpoint
+- `authenticate()` now returns `encryptionKey` to client for session storage
+- `executeQuery()` encrypts query using AES-256-CBC before sending via `application/x-www-form-urlencoded`
+- `DecryptQuery()` in controller derives 256-bit key via SHA-256 before decryption
+- Anti-forgery token sent as `__RequestVerificationToken` form field instead of JSON body
+
+### Security
+- Query text encrypted in transit using AES-256-CBC
+- SHA-256 key derivation ensures consistent encryption regardless of key string length
+- Web Crypto API for client-side encryption (no external dependencies)

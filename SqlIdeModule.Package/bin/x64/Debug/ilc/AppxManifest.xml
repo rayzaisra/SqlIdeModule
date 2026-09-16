@@ -32,7 +32,7 @@
     <build:Item Name="Microsoft.Build.AppxPackage.dll" Version="17.14.40507.50062" />
     <build:Item Name="ProjectGUID" Value="{D47AB4A1-E94C-44E4-8207-D56771ABEFF1}" />
     <build:Item Name="ilc.exe" Version="2.2.31116.00 built by: PROJECTNREL" />
-    <build:Item Name="Microsoft.Windows.UI.Xaml.Build.Tasks.dll" Version="0.0.0.0" />
+    <build:Item Name="Microsoft.Windows.UI.Xaml.Build.Tasks.dll" Version="10.0.26100.8249" />
     <build:Item Name="OptimizingToolset" Value="ilc.exe" />
     <build:Item Name="UseDotNetNativeSharedAssemblyFrameworkPackage" Value="False" />
     <build:Item Name="DisableStackTraceMetadata" Value="false" />
@@ -47,6 +47,6 @@
     <build:Item Name="LargeAddressAware" Value="false" />
     <build:Item Name="NoLinkerSymbols" Value="false" />
     <build:Item Name="OutOfProcPDB" Value="false" />
-    <build:Item Name="MakePri.exe" Version="10.0.26100.4188 (WinBuild.160101.0800)" />
+    <build:Item Name="MakePri.exe" Version="10.0.26100.8249 (WinBuild.160101.0800)" />
   </build:Metadata>
 </Package>

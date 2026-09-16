@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>SqlIdeModule</id>
-    <version>1.0.2</version>
+    <version>1.1.0</version>
 	
 	<readme>README.md</readme>
 	<license type="file">LICENSE.md</license>
@@ -22,6 +22,13 @@
     </summary>
 
     <releaseNotes>
+      Version 1.1.0 (2026-09-16):
+      - Added query encryption before transmission to hide SQL from network inspection.
+      - AES-256-CBC encryption on frontend using Web Crypto API (no external dependencies).
+      - SHA-256 key derivation for consistent 256-bit key on both client and server.
+      - Backend decryption using SHA-256 hashed key with AES-CBC.
+      - Fixed Anti-Forgery Token validation: now sent as __RequestVerificationToken form field.
+
       Version 1.0.2 (2026-01-23):
       - Fixed Anti-Forgery Token validation issues in AJAX requests.
       - Improved session stability on HTTPS / production environments.

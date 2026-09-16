@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using System.IO;
+using System.Security.Cryptography;
+using System.Web.Configuration;
 
 namespace SqlIdeModule.Web.Areas.SqlIde.Controllers
 {
@@ -48,9 +51,15 @@ namespace SqlIdeModule.Web.Areas.SqlIde.Controllers
                 {
                     Session["SqlIdeConnectionString"] = result.ConnectionString;
                     Session["SqlIdeAuthenticated"] = true;
+                    var encryptionKey = WebConfigurationManager.AppSettings["SqlIdeEncryptionKey"];
+                    Session["SqlIdeEncryptionKey"] = encryptionKey;
                 }
 
-                return Json(new { success = result.Success, message = result.Message });
+                return Json(new { 
+                    success = result.Success, 
+                    message = result.Message,
+                    encryptionKey = Session["SqlIdeEncryptionKey"] 
+                });
             }
             catch (Exception ex)
             {
@@ -110,10 +119,21 @@ namespace SqlIdeModule.Web.Areas.SqlIde.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public JsonResult ExecuteQuery(string query)
         {
             try
             {
+                // Decrypt query if encrypted
+                if (Session["SqlIdeEncryptionKey"] != null)
+                {
+                    var encryptionKey = Session["SqlIdeEncryptionKey"] as string;
+                    if (!string.IsNullOrEmpty(encryptionKey) && query != null && query.Length > 0)
+                    {
+                        query = DecryptQuery(query, encryptionKey);
+                    }
+                }
+
                 // Check authentication
                 if (Session["SqlIdeAuthenticated"] == null || !(bool)Session["SqlIdeAuthenticated"])
                 {
@@ -177,6 +197,37 @@ namespace SqlIdeModule.Web.Areas.SqlIde.Controllers
                     RowCount = 0,
                     ExecutionTime = 0
                 });
+            }
+        }
+
+        private string DecryptQuery(string encryptedQuery, string key)
+        {
+            try
+            {
+                byte[] cipherBytes = Convert.FromBase64String(encryptedQuery);
+                using (var aes = System.Security.Cryptography.Aes.Create())
+                {
+                    using (var sha256 = System.Security.Cryptography.SHA256.Create())
+                    {
+                        aes.Key = sha256.ComputeHash(System.Text.Encoding.UTF8.GetBytes(key));
+                    }
+                    aes.Mode = System.Security.Cryptography.CipherMode.CBC;
+                    aes.Padding = System.Security.Cryptography.PaddingMode.PKCS7;
+                    byte[] iv = new byte[16];
+                    Array.Copy(cipherBytes, 0, iv, 0, 16);
+                    byte[] actualCipher = new byte[cipherBytes.Length - 16];
+                    Array.Copy(cipherBytes, 16, actualCipher, 0, actualCipher.Length);
+                    using (var ms = new MemoryStream(actualCipher))
+                    using (var cs = new CryptoStream(ms, aes.CreateDecryptor(aes.Key, iv), CryptoStreamMode.Read))
+                    using (var reader = new StreamReader(cs))
+                    {
+                        return reader.ReadToEnd();
+                    }
+                }
+            }
+            catch
+            {
+                return encryptedQuery;
             }
         }
 
