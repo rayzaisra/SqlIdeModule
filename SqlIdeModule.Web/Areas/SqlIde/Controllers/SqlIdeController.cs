@@ -51,7 +51,7 @@ namespace SqlIdeModule.Web.Areas.SqlIde.Controllers
                 {
                     Session["SqlIdeConnectionString"] = result.ConnectionString;
                     Session["SqlIdeAuthenticated"] = true;
-                    var encryptionKey = WebConfigurationManager.AppSettings["SqlIdeEncryptionKey"];
+                    var encryptionKey = "Zf1G9RM/g+ik7gn0TSpqvLRHdTYZHEqZV8UX/VBz4Wo=";
                     Session["SqlIdeEncryptionKey"] = encryptionKey;
                 }
 
